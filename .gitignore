@@ -1,0 +1,35 @@
+# Compiled
+*.elc
+*.eld
+
+# lsp
+.lsp-*
+
+# Packaging
+.cask
+
+# Backup files
+*~
+
+# Undo-tree save-files
+*.~undo-tree
+
+# Custom file
+custom.el
+
+# Project files
+projects
+
+# History
+history
+
+# Folders
+auto-save-list
+backups
+eshell
+straight
+history
+transient
+.cache
+
+.DS_STORE
