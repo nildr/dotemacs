@@ -18,6 +18,15 @@
   :bind (("C-x g"   . magit-status)
          ("C-x C-g" . magit-status)))
 
+(use-package vterm)
+
+(use-package vterm-toggle
+  :commands (vterm-toggle)
+  :custom
+  (vterm-toggle-fullscreen-p nil "Open a vterm in another window.")
+  (vterm-toggle-scope 'project)
+  :bind (("C-c s" . #'vterm-toggle)))
+
 ;;; Projectile
 (use-package projectile
   :diminish projectile-mode
@@ -57,6 +66,10 @@
 
 (use-package flycheck-clj-kondo)
 
+;; Docker
+(use-package dockerfile-mode
+  :mode ("Dockerfile\\'" . dockerfile-mode))
+
 ;;; Common Lisp
 (use-package slime
   :config
@@ -86,8 +99,9 @@
         cider-overlays-use-font-lock t
         cider-prompt-save-file-on-load 'always-save
         cider-font-lock-dynamically '(macro core function var deprecated)
-        cider-use-overlays nil
+        cider-use-overlays t
         cider-repl-pop-to-buffer-on-connect 'display-only
+        cider-repl-use-pretty-printing t
         nrepl-hide-special-buffers t
         nrepl-log-messages t
         nrepl-use-ssh-fallback-for-remote-hosts t))
@@ -100,6 +114,7 @@
   :diminish clj-refactor-mode
   :config (cljr-add-keybindings-with-prefix "C-c C-m"))
 
+;; LSP
 (use-package lsp-mode
   :hook (((clojure-mode clojurescript-mode clojurec-mode) . lsp))
   :config
@@ -109,6 +124,12 @@
 (use-package lsp-treemacs)
 
 (use-package lsp-ui)
+
+;; JVM
+(use-package jvm-mode
+  :config
+  (setq jvm-mode-line-string " jvm[%d]")
+  (jvm-mode))
 
 (provide 'init-programming)
 ;;; init-programming.el ends here
