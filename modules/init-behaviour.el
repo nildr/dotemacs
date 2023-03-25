@@ -12,7 +12,10 @@
   :bind ("C-w" . ace-window))
 
 (use-package company
-  :hook ((prog-mode text-mode) . company-mode))
+  :bind (("TAB" . company-indent-or-complete-common))
+  :hook ((prog-mode text-mode) . company-mode)
+  :config
+  (global-company-mode))
 
 (use-package orderless
   :init
