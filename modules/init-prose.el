@@ -2,6 +2,7 @@
 ;;; Commentary:
 
 ;;; Code:
+;; Org
 (use-package org)
 
 (use-package org-modern
@@ -20,6 +21,13 @@
          :map org-mode-map
          ("C-M-i"   . completion-at-point))
   :config (org-roam-setup))
+
+;; Markdown
+(use-package markdown-mode
+  :mode "\\.md\\'")
+
+;; Yaml
+(use-package yaml-mode)
 
 (provide 'init-prose)
 ;;; init-prose.el ends here
