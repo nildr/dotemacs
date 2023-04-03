@@ -1,4 +1,4 @@
-;;; init-defaults.el --- Generic defaults -*- lexical-binding: t; no-byte-compile: t -*-
+;;; defaults.el --- Generic defaults -*- lexical-binding: t; no-byte-compile: t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -45,5 +45,5 @@
   :config
   (gcmh-mode 1))
 
-(provide 'init-defaults)
-;;; init-defaults.el ends here
+(provide 'defaults)
+;;; defaults.el ends here

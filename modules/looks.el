@@ -1,4 +1,4 @@
-;;; init-appearance.el --- Themes and appearance -*- lexical-binding: t;  no-byte-compile: t -*-
+;;; looks.el --- Themes and appearance -*- lexical-binding: t;  no-byte-compile: t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -10,12 +10,17 @@
   :config (load-theme 'kaolin-dark t))
 
 (use-package autothemer
+  :disabled
   :init
   (add-to-list
    'custom-theme-load-path
    (concat user-emacs-directory "themes/"))
   :config
   (load-theme 'kanagawa t))
+
+(use-package doom-themes
+  :config
+  (load-theme 'doom-monokai-octagon t))
 
 ;; Icons
 (use-package all-the-icons)
@@ -29,12 +34,13 @@
   :init (doom-modeline-mode 1))
 
 (use-package emacs
-  :hook (prog-mode . display-line-numbers-mode)
+  :hook ((prog-mode . (lambda () (setq show-trailing-whitespace t)))
+          (prog-mode . display-line-numbers-mode))
   :init
   ;;Set font
   (set-face-attribute 'default nil
-                      :font (ndb/font '("Berkeley Mono" "JetBrains Mono" "Fira Code" "Menlo"))
-                      :height 125)
+                      :font (ndb/font '("JetBrains Mono" "Fira Code" "Menlo"))
+                      :height 120)
   ;; Set fringe size
   (set-fringe-mode 10)
   ;; Display current column
@@ -42,7 +48,13 @@
   ;; Highlight current line
   (global-hl-line-mode 1)
   ;; Highlight matching pairs of parentheses
-  (show-paren-mode))
+  (show-paren-mode)
+  ;; Column size
+  (setq-default fill-column 80)
+  ;; Tab width
+  (setq-default tab-width 2)
+  ;; No tabs
+  (setq-default indent-tabs-mode nil))
 
-(provide 'init-appearance)
-;;; init-appearance.el ends here
+(provide 'looks)
+;;; looks.el ends here

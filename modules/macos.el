@@ -1,4 +1,4 @@
-;;; init-macos.el --- macOs Integration -*- lexical-binding: t; no-byte-compile: t -*-
+;;; macos.el --- macOs Integration -*- lexical-binding: t; no-byte-compile: t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -11,5 +11,5 @@
     (setq shift-select-mode t)
     (delete-selection-mode t)))
 
-(provide 'init-macos)
-;;; init-macos.el ends here
+(provide 'macos)
+;;; macos.el ends here

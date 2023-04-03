@@ -5,12 +5,13 @@
 ;;
 ;; Modules:
 ;; 1. Packages: Package initialization
-;; 1. Defaults: Generic defaults, diminish, gcmh
-;; 2. Behaviour/Completion: Which key, windows and completion framework (vertico, consult, embark, corfu (company), orderless)
-;; 3. Programming Languages: Magit, Projectile, Parentheses, Flycheck, Common Lisp, Clojure
-;; 4. Prose: org-mode, roam
-;; 5. macos: mac defaults
-;; 6. Appearance: Themes, fonts, modeline and UI configurations
+;; 2. Defaults: Generic defaults, diminish, gcmh
+;; 3. Navigation/Completion: Which key, windows and completion framework (vertico, consult, embark, corfu (company), orderless)
+;; 4. Tools: Magit, Projectile, Parentheses, Flycheck
+;; 5. Languages: Common Lisp, Clojure
+;; 6. Prose: org-mode, roam
+;; 7. macos: mac defaults
+;; 8. Looks: Themes, fonts, modeline and UI configurations
 
 ;;; Code:
 
@@ -19,12 +20,13 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; Load modules
-(require 'init-packages)
-(require 'init-defaults)
-(require 'init-behaviour)
-(require 'init-programming)
-(require 'init-prose)
-(require 'init-macos)
-(require 'init-appearance)
+(require 'packages)
+(require 'defaults)
+(require 'navigation)
+(require 'tools)
+(require 'languages)
+(require 'prose)
+(require 'macos)
+(require 'looks)
 
 ;;; init.el ends here

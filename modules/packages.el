@@ -1,4 +1,4 @@
-;;; init-packages.el --- Straight initialization  -*- lexical-binding: t; no-byte-compile: t -*-
+;;; packages.el --- Straight initialization  -*- lexical-binding: t; no-byte-compile: t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -20,8 +20,8 @@
 
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
-(setq use-package-always-ensure t)
-(setq use-package-expand-minimally t)
+(setq use-package-always-ensure       t)
+(setq use-package-expand-minimally    t)
 
-(provide 'init-packages)
-;;; init-packages.el ends here
+(provide 'packages)
+;;; packages.el ends here

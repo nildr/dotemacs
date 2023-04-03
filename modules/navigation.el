@@ -1,4 +1,4 @@
-;;; init-behaviour.el --- Behaviour and Completion Frameworks -*- lexical-binding: t; no-byte-compile: t -*-
+;;; navigation.el --- Navigation and Completion Frameworks -*- lexical-binding: t; no-byte-compile: t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -11,6 +11,11 @@
 (use-package ace-window
   :bind ("C-w" . ace-window))
 
+(use-package golden-ratio
+  :diminish
+  :config
+  (golden-ratio-mode 1))
+
 (use-package company
   :bind (("TAB" . company-indent-or-complete-common))
   :hook ((prog-mode text-mode) . company-mode)
@@ -18,10 +23,10 @@
   (global-company-mode))
 
 (use-package orderless
-  :init
-  (setq completion-styles '(orderless))
-  (setq completion-category-defaults nil)
-  (setq completion-category-overrides '((file (styles . (partial-completion))))))
+    :init
+    (setq completion-styles '(orderless))
+    (setq completion-category-defaults nil)
+    (setq completion-category-overrides '((file (styles . (partial-completion))))))
 
 (use-package vertico
   :init (vertico-mode))
@@ -130,5 +135,5 @@
   ;; Hide commands in M-x which don't work in the current mode
   (setq read-extended-command-predicate #'command-completion-default-include-p))
 
-(provide 'init-behaviour)
-;;; init-behaviour.el ends here
+(provide 'navigation)
+;;; navigation.el ends here

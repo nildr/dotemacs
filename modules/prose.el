@@ -29,5 +29,5 @@
 ;; Yaml
 (use-package yaml-mode)
 
-(provide 'init-prose)
-;;; init-prose.el ends here
+(provide 'prose)
+;;; prose.el ends here
